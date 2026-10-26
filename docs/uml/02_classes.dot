@@ -1,0 +1,16 @@
+digraph classes {
+ graph [label="QualityTrack | Diagrama de classes conceitual", labelloc=t,fontsize=21,fontname="Arial", rankdir=LR, bgcolor=white,ranksep=1.15,nodesep=0.7, splines=polyline];
+ node [shape=record,fontname="Arial",fontsize=11,color="#49738A",style=filled,fillcolor="#F7FBFD",penwidth=1.5];
+ edge [fontname="Arial",fontsize=10,color="#4F6477"];
+ Usuario [label="{Usuario|id: int\lnome: texto\lemail: texto\lsenha_hash: texto\lperfil: enum\lativo: bool\l}"];
+ Setor [label="{Setor|id: int\lnome: texto\l}"];
+ NaoConformidade [label="{NaoConformidade|id: int\ltitulo: texto\ldescricao: texto\lorigem: enum\lgravidade: enum\lstatus: enum\lcausa: texto\ldata_abertura: data\ldata_encerramento: data\l}"];
+ AcaoCorretiva [label="{AcaoCorretiva|id: int\ldescricao: texto\lprazo: data\lstatus: enum\lconcluida_em: data\l}"];
+ Historico [label="{Historico|id: int\levento: texto\ldetalhes: texto\ldata: data\l}"];
+ Setor -> NaoConformidade [label="1 : N", dir=both,arrowtail=none,arrowhead=vee];
+ Usuario -> NaoConformidade [label="1 : N (responsável)",dir=both,arrowtail=none,arrowhead=vee];
+ NaoConformidade -> AcaoCorretiva [label="1 : N",dir=both,arrowtail=diamond,arrowhead=vee];
+ Usuario -> AcaoCorretiva [label="1 : N (executor)",dir=both,arrowtail=none,arrowhead=vee];
+ NaoConformidade -> Historico [label="1 : N",dir=both,arrowtail=diamond,arrowhead=vee];
+ Usuario -> Historico [label="1 : N (autor)",dir=both,arrowtail=none,arrowhead=vee];
+}

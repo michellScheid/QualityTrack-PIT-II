@@ -1,0 +1,10 @@
+digraph casos {
+ graph [label="QualityTrack | Diagrama de casos de uso (MVP)", labelloc=t, fontsize=21, fontname="Arial", bgcolor="white", rankdir=LR, nodesep=0.55, ranksep=1.2, compound=true];
+ node [fontname="Arial", fontsize=11]; edge [fontname="Arial", fontsize=10, color="#60758A"];
+ admin [label="Administrador", shape=plaintext]; analista [label="Analista / Gestor",shape=plaintext]; consulta [label="Consulta", shape=plaintext];
+ subgraph cluster_system {label="Sistema QualityTrack"; color="#9BB3C9"; bgcolor="#F7FBFD"; style=rounded;
+ login [label="Autenticar",shape=ellipse,style=filled,fillcolor=white]; ver [label="Consultar dashboard\ne ocorrências",shape=ellipse,style=filled,fillcolor=white]; cadastrar [label="Registrar / editar\nnão conformidade",shape=ellipse,style=filled,fillcolor=white]; acoes [label="Cadastrar e atualizar\nações corretivas",shape=ellipse,style=filled,fillcolor=white]; status [label="Atualizar status",shape=ellipse,style=filled,fillcolor=white]; encerrar [label="Verificar eficácia\ne encerrar",shape=ellipse,style=filled,fillcolor=white]; usuarios [label="Cadastrar usuários",shape=ellipse,style=filled,fillcolor=white]; }
+ admin -> login; admin -> usuarios; admin -> encerrar;
+ analista -> login; analista -> cadastrar; analista -> acoes; analista -> status; analista -> encerrar;
+ consulta -> login; consulta -> ver; analista -> ver; admin -> ver;
+}

@@ -1,0 +1,13 @@
+digraph sequencia {
+ graph [label="QualityTrack | Sequência simplificada de registro de NC",labelloc=t,fontsize=20,fontname="Arial",rankdir=TB,bgcolor=white,nodesep=0.7,ranksep=0.6];
+ node [shape=box,style="rounded,filled",fillcolor="#EEF6FA",color="#49738A",fontname="Arial",fontsize=11]; edge [fontname="Arial",color="#47677B",fontsize=10];
+ inicio [label="1. Usuário autenticado\nabre formulário",fillcolor="#DAEDF7"];
+ valid [label="2. Front-end envia dados\npara controller Flask"];
+ verify [label="3. Controller valida campos\ne permissão do perfil"];
+ persist [label="4. Camada de persistência\ninsere NC no SQLite"];
+ history [label="5. Sistema registra evento\nna trilha de auditoria"];
+ result [label="6. Interface exibe NC-00001\ne mensagem de sucesso",fillcolor="#DFF6EB"];
+ error [label="3a. Se inválido: devolve erro\ne não grava ocorrência",fillcolor="#FFF1E6"];
+ inicio->valid->verify->persist->history->result;
+ verify->error [style=dashed,label="falha de validação"];
+}

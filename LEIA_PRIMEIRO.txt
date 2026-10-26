@@ -1,0 +1,22 @@
+QUALITYTRACK — LEIA PRIMEIRO (GUIA PARA INICIANTES)
+================================================
+
+Este pacote contém o código-fonte e a documentação técnica do projeto.
+Não é necessário saber programar nem usar GitHub para guardar este ZIP.
+
+1. EXTRAIA o arquivo ZIP para uma pasta no seu computador.
+2. Leia o arquivo "README.md" (pode abrir com Bloco de Notas).
+3. Para usar o programa no Windows, tenha o Python 3.10 ou superior instalado.
+4. Dê dois cliques no arquivo "INICIAR_QUALITYTRACK_WINDOWS.bat".
+5. No primeiro acesso, crie seu administrador com uma senha de no mínimo 10 caracteres.
+6. Abra http://127.0.0.1:5000 no navegador.
+
+Importante: a instalação do Flask requer conexão à internet.
+Se surgir algum erro, envie uma FOTO DA TELA aqui na conversa.
+
+GITHUB: por enquanto você NAO precisa fazer nada. Primeiro vamos verificar se a
+aplicação abre no seu computador. Depois ensino a publicar, clique por clique.
+Nunca envie arquivos .sqlite3 (banco local), .env ou suas senhas ao GitHub.
+
+Autor: Michell Scheid da Silva 
+Projeto acadêmico de Engenharia de Software II — 2026.

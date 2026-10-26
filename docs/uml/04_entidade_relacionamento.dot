@@ -1,0 +1,15 @@
+digraph banco {
+ graph [label="QualityTrack | Modelo relacional SQLite (visão resumida)",labelloc=t,fontsize=20,fontname="Arial",bgcolor=white,rankdir=LR,nodesep=0.7,ranksep=0.95];
+ node [shape=record,style=filled,fillcolor="#F4F9FC",color="#66859A",fontname="Arial",fontsize=11]; edge [color="#66859A",fontsize=10,fontname="Arial",arrowhead=vee];
+ users [label="{users|PK id\lname\lemail UNIQUE\lpassword_hash\lrole\lactive\l}"];
+ sectors [label="{sectors|PK id\lname UNIQUE\l}"];
+ ncs [label="{nonconformities|PK id\lFK sector_id\lFK assigned_user_id\lFK created_by\ltitle; description; origin\lseverity; status; root_cause\lcreated_at; closed_at\l}"];
+ actions [label="{corrective_actions|PK id\lFK nc_id\lFK assigned_user_id\ldescription; due_date; status\lcompleted_at\l}"];
+ history [label="{audit_history|PK id\lFK nc_id\lFK actor_id\levent; details; created_at\l}"];
+ sectors -> ncs [label="1:N"];
+ users -> ncs [label="1:N"];
+ ncs -> actions [label="1:N"];
+ users -> actions [label="1:N"];
+ ncs -> history [label="1:N"];
+ users -> history [label="1:N"];
+}

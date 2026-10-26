@@ -1,0 +1,14 @@
+QUALITYTRACK - CORRECAO DO HISTORICO v1.1
+
+Esta atualizacao impede que clicar em Salvar sem mudar o status crie uma entrada repetida no historico. Tambem evita mudancas falsas do status da ocorrencia.
+
+PASSOS (Windows):
+1. Pare o sistema no terminal preto usando CTRL + C.
+2. Abra sua pasta QualityTrack_repositorio.
+3. Faça uma copia do app.py atual (por exemplo, app_backup.py, fora do repositorio de publicacao).
+4. Extraia este ZIP. Copie SOMENTE app.py para dentro da pasta QualityTrack_repositorio e aceite Substituir arquivo.
+5. NAO substitua ou apague qualitytrack.sqlite3 (contem seus registros).
+6. Reinicie o sistema com INICIAR_QUALITYTRACK_WINDOWS.bat.
+7. Cadastre uma nova ocorrencia de TESTE, insira uma acao, altere seu status uma vez e clique Salvar novamente sem mudar. Deve aparecer aviso de nenhuma alteracao e historico nao deve duplicar.
+
+OBS: O historico anterior permanece registrado, para preservar rastreabilidade.
